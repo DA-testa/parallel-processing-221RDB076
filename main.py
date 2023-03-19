@@ -7,26 +7,30 @@ def parallel_processing(n, m, data):
     # TODO: write the function for simulating parallel tasks, 
     # create the output pairs
     cnt=0
+    time = 0
+    joblist = []
     for i in range(n):
-        output.append([i, 0, data[cnt]])
+        output.append((i, 0))
+        joblist.append((i, data[cnt]))
         cnt=cnt+1
     while(cnt<len(data)):
-        next, minn, time = getmin(output, data)
-        output.append((next, data[cnt]+time, data[cnt]))
+        ind, minn = getmin(joblist)
+        time = time + minn
+        output.append((ind, data[cnt]+time, data[cnt]))
+        joblist.remove((ind, minn))
+        joblist.append((i, data[cnt]+time))
         cnt=cnt+1
     print(output)
     return output
 
-def getmin(llist, data):
-    minn=llist[0][0]
-    ind = llist[0][1]
-    ttime = llist[0][2]
-    for (key, value, time) in llist:
+def getmin(llist, time):
+    minn=llist[0][1]
+    ind = llist[0][0]
+    for (key, value) in llist:
         if(value<minn):
             minn=value
             ind = key
-            ttime=time
-    return [ind, minn, ttime]
+    return [ind, minn]
     
 def main():
     # TODO: create input from keyboard
