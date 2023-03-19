@@ -8,23 +8,25 @@ def parallel_processing(n, m, data):
     # create the output pairs
     cnt=0
     for i in range(n):
-        output.append((i, 0))
+        output.append([i, 0, data[cnt]])
         cnt=cnt+1
     while(cnt+1<len(data)):
-        next, time = getmin(output)
-        output.append((next, data[cnt]+time))
+        next, minn, time = getmin(output, data)
+        output.append((next, data[cnt]+time, data[cnt]))
         cnt=cnt+1
     print(output)
     return output
 
-def getmin(llist):
+def getmin(llist, data):
     minn=llist[0][0]
     ind = 0
-    for (key, value) in llist:
+    ttime = 0
+    for (key, value, time) in llist:
         if(value<minn):
             minn=value
             ind = key
-    return [ind, minn]
+            ttime=time
+    return [ind, minn, ttime]
     
 def main():
     # TODO: create input from keyboard
