@@ -8,10 +8,10 @@ def parallel_processing(n, m, data):
     # create the output pairs
     cnt=0
     time = 0
-    joblist = []
+    joblist = {}
     for i in range(n):
         output.append((i, 0))
-        joblist.append((i, data[cnt]))
+        joblist[i]= data[cnt]
         cnt=cnt+1
     while(cnt<len(data)):
         ind, minn = getmin(joblist)
@@ -21,16 +21,14 @@ def parallel_processing(n, m, data):
         print(output)
         print(joblist)
         print("~~~~~~~~~~~~~~")
-        joblist.remove((ind, minn))
-        joblist.append((i, data[cnt]+time))
+        joblist[i]= data[cnt]+time
         cnt=cnt+1
     print(output)
     return output
 
-def getmin(llist):
-    minn=llist[0][1]
-    ind = llist[0][0]
-    for (key, value) in llist:
+def getmin(ddict):
+    minn=ddict[0]
+    for (key, value) in ddict:
         if(value<minn):
             minn=value
             ind = key
