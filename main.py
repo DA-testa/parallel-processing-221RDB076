@@ -28,7 +28,7 @@ def parallel_processing(n, m, data):
 
 def getmin(ddict):
     minn=ddict[0]
-    for (key, value) in ddict:
+    for (key, value) in ddict.items():
         if(value<minn):
             minn=value
             ind = key
