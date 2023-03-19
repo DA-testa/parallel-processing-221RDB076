@@ -21,7 +21,7 @@ def parallel_processing(n, m, data):
         print(output)
         print(joblist)
         print("~~~~~~~~~~~~~~")
-        joblist[i]= data[cnt]+time
+        joblist[ind]= data[cnt]+time
         cnt=cnt+1
     print(output)
     return output
