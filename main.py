@@ -16,7 +16,7 @@ def parallel_processing(n, m, data):
     while(cnt<len(data)):
         ind, minn = getmin(joblist)
         time = time + minn
-        output.append((ind, data[cnt]+time, data[cnt]))
+        output.append((ind, time))
         joblist.remove((ind, minn))
         joblist.append((i, data[cnt]+time))
         cnt=cnt+1
