@@ -10,7 +10,7 @@ def parallel_processing(n, m, data):
     for i in range(n):
         output.append([i, 0, data[cnt]])
         cnt=cnt+1
-    while(cnt+1<len(data)):
+    while(cnt<len(data)):
         next, minn, time = getmin(output, data)
         output.append((next, data[cnt]+time, data[cnt]))
         cnt=cnt+1
@@ -19,8 +19,8 @@ def parallel_processing(n, m, data):
 
 def getmin(llist, data):
     minn=llist[0][0]
-    ind = 0
-    ttime = 0
+    ind = llist[0][1]
+    ttime = llist[0][2]
     for (key, value, time) in llist:
         if(value<minn):
             minn=value
