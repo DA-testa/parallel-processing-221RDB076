@@ -7,7 +7,7 @@ def parallel_processing(n, m, data):
     # TODO: write the function for simulating parallel tasks, 
     # create the output pairs
     for i in range(n):
-        output.push((i, 0))
+        output.append((i, 0))
     next = min(output(0))
     print(next)
     return output
