@@ -35,8 +35,8 @@ def main():
     # second line - data 
     # data - contains m integers t(i) - the times in seconds it takes any thread to process i-th job
     data = input().split()
-    for val in data:
-        val=int(val)
+    for  i in range(len(data)):
+        data[i]=int(data[i])
     # TODO: create the function
     result = parallel_processing(int(n),int(m),data)
     
