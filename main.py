@@ -49,7 +49,7 @@ def main():
     # TODO: create the function
     result = parallel_processing(int(n),int(m),data)
     for key, value in result:
-        print(str(key)+" "+str(value)
+        print(str(key)+" "+str(value))
     # TODO: print out the results, each pair in it's own line
 
 
