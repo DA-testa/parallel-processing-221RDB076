@@ -14,9 +14,8 @@ def parallel_processing(n, m, data):
     return output
 
 def getmin(llist):
-    for ppair in llist:
-        for (key, value) in ppair:
-            print(key)
+    for (key, value) in llist:
+        print(key)
     
 def main():
     # TODO: create input from keyboard
