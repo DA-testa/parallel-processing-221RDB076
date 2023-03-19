@@ -10,8 +10,11 @@ def parallel_processing(n, m, data):
     for i in range(n):
         output.append((i, data[cnt]))
         cnt=cnt+1
-    next = getmin(output)
-    print(next)
+    while(cnt+1<len(data)):
+        next = getmin(output)
+        output.append((next, data[cnt]))
+        cnt=cnt+1
+    print(output)
     return output
 
 def getmin(llist):
