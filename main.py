@@ -8,13 +8,14 @@ def parallel_processing(n, m, data):
     # create the output pairs
     for i in range(n):
         output.append((i, 0))
-    next = min(output(0))
+    next = getmin(output)
     print(next)
     return output
 
-def dojob(i):
-    i=1
-    #print(i)
+def getmin(llist):
+    for ppair in llist:
+        for (key, value) in ppair:
+            print(key)
     
 def main():
     # TODO: create input from keyboard
