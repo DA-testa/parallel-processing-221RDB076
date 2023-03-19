@@ -22,7 +22,7 @@ def main():
     
     n = 0
     m = 0
-    n,m = input.split(" ")
+    n,m = ln.split(" ")
     # second line - data 
     # data - contains m integers t(i) - the times in seconds it takes any thread to process i-th job
     data = []
