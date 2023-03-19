@@ -8,6 +8,7 @@ def parallel_processing(n, m, data):
     # create the output pairs
     for i in range(n):
         output.append((i, 0))
+    print(output)
     next = getmin(output)
     print(next)
     return output
