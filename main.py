@@ -6,16 +6,20 @@ def parallel_processing(n, m, data):
     print(data)
     # TODO: write the function for simulating parallel tasks, 
     # create the output pairs
+    cnt=0
     for i in range(n):
-        output.append((i, 0))
-    print(output)
+        output.append((i, data[cnt]))
+        cnt=cnt+1
     next = getmin(output)
     print(next)
     return output
 
 def getmin(llist):
+    min=999999
     for (key, value) in llist:
-        print(key)
+        if(value<min):
+            min=value
+    return value
     
 def main():
     # TODO: create input from keyboard
