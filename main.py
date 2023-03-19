@@ -28,7 +28,7 @@ def main():
     data = []
 
     # TODO: create the function
-    result = parallel_processing(n,m,data)
+    result = parallel_processing(int(n),int(m),data)
     
     # TODO: print out the results, each pair in it's own line
 
