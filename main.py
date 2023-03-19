@@ -23,7 +23,7 @@ def parallel_processing(n, m, data):
     print(output)
     return output
 
-def getmin(llist, time):
+def getmin(llist):
     minn=llist[0][1]
     ind = llist[0][0]
     for (key, value) in llist:
