@@ -15,10 +15,10 @@ def parallel_processing(n, m, data):
     return output
 
 def getmin(llist):
-    min=999999
+    minn=999999
     for (key, value) in llist:
-        if(value<min):
-            min=value
+        if(value<minn):
+            minn=value
     return value
     
 def main():
@@ -35,7 +35,8 @@ def main():
     # second line - data 
     # data - contains m integers t(i) - the times in seconds it takes any thread to process i-th job
     data = input().split()
-
+    for val in data:
+        val=int(val)
     # TODO: create the function
     result = parallel_processing(int(n),int(m),data)
     
