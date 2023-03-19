@@ -3,15 +3,17 @@ from threading import Thread
 
 def parallel_processing(n, m, data):
     output = []
+    print(data)
     # TODO: write the function for simulating parallel tasks, 
     # create the output pairs
     for i in range(m):
         print("thread"+str(i))
-        th = Thread(target=dojob, args=data[i])
+        th = Thread(target=dojob, args=i)
     return output
 
 def dojob(i):
-    print(i)
+    i=1
+    #print(i)
     
 def main():
     # TODO: create input from keyboard
@@ -26,7 +28,7 @@ def main():
     n,m = ln.split(" ")
     # second line - data 
     # data - contains m integers t(i) - the times in seconds it takes any thread to process i-th job
-    data = []
+    data = input().split()
 
     # TODO: create the function
     result = parallel_processing(int(n),int(m),data)
