@@ -17,13 +17,8 @@ def parallel_processing(n, m, data):
         ind, minn = getmin(joblist)
         time = minn
         output.append((ind, time))
-        print(joblist[0])
-        print(output)
-        print(joblist)
-        print("~~~~~~~~~~~~~~")
         joblist[ind]= data[cnt]+time
         cnt=cnt+1
-    print(output)
     return output
 
 def getmin(ddict):
@@ -53,7 +48,8 @@ def main():
         data[i]=int(data[i])
     # TODO: create the function
     result = parallel_processing(int(n),int(m),data)
-    
+    for key, value in result:
+        print(str(key)+" "+str(value)
     # TODO: print out the results, each pair in it's own line
 
 
