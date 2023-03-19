@@ -5,6 +5,7 @@ def parallel_processing(n, m, data):
     # TODO: write the function for simulating parallel tasks, 
     # create the output pairs
     for i in range(n):
+        print("thread"+i)
         th = Thread(target=dojob, args=[i, m])
     return output
 
