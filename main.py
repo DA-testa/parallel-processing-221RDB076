@@ -15,11 +15,13 @@ def parallel_processing(n, m, data):
     return output
 
 def getmin(llist):
-    minn=999999
+    minn=llist[0][0]
+    ind = 0
     for (key, value) in llist:
         if(value<minn):
             minn=value
-    return value
+            ind = key
+    return ind
     
 def main():
     # TODO: create input from keyboard
